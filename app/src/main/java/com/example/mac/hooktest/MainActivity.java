@@ -10,7 +10,10 @@ import com.shake.activity.HookActivity;
 import com.shake.amspms.AMSPMSActivity;
 import com.shake.binderhook.BinderActivity;
 import com.shake.classloader.ClassLoaderActivity;
+import com.shake.provider.ProviderActivity;
 import com.shake.proxy.ProxyActivity;
+import com.shake.receiver.ReceiverActivity;
+import com.shake.service.ServiceActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,6 +62,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ClassLoaderActivity.class));
+            }
+        });
+
+        Button btnreceiver = (Button) findViewById(R.id.btn_receiver);
+        btnreceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ReceiverActivity.class));
+            }
+        });
+
+
+        Button btnservice = (Button) findViewById(R.id.btn_service);
+        btnservice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ServiceActivity.class));
+            }
+        });
+
+
+        Button btnprovider = (Button) findViewById(R.id.btn_provider);
+        btnprovider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProviderActivity.class));
             }
         });
 

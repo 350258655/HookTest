@@ -51,7 +51,7 @@ public class BaseDexClassLoaderHookHelper {
 
 
         /**
-         * 第四步，把原始数组，和插件数组的内容复制到这个新的数组中
+         * 第五步，把原始数组，和插件数组的内容复制到这个新的数组中
          */
         //把原始的Element[]数组复制进去
         System.arraycopy(elementsArray,0,newElements,0,elementsArray.length);
@@ -60,7 +60,7 @@ public class BaseDexClassLoaderHookHelper {
 
 
         /**
-         * 第五步，将dexElements字段的值 替换为新的数组
+         * 第六步，将dexElements字段的值 替换为新的数组
          */
         dexElementsField.set(dexPathListObject,newElements);
 

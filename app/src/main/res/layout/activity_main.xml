@@ -36,4 +36,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="hook ClassLoader跨进程启动Activity"/>
+    <Button
+        android:id="@+id/btn_receiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hook 广播"/>
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hook 服务"/>
+    <Button
+        android:id="@+id/btn_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hook 内容提供者"/>
 </LinearLayout>
