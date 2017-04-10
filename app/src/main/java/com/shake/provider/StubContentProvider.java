@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.util.Log;
 
 public class StubContentProvider extends ContentProvider {
+
+
     public static final String AUTHORITY = "com.shake.provider.StubContentProvider";
 
     @Override
@@ -17,6 +19,10 @@ public class StubContentProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         //noinspection ConstantConditions
+       // return getContext().getContentResolver().query(getRealUri(uri), projection, selection, selectionArgs, sortOrder);
+
+        
+
         return getContext().getContentResolver().query(getRealUri(uri), projection, selection, selectionArgs, sortOrder);
     }
 
@@ -64,15 +70,27 @@ public class StubContentProvider extends ContentProvider {
      * @return 插件真正的URI
      */
     private Uri getRealUri(Uri raw) {
-        String rawAuth = raw.getAuthority();
-        if (!AUTHORITY.equals(rawAuth)) {
-            Log.w("TAG", "rawAuth:" + rawAuth);
-        }
 
-        String uriString = raw.toString();
-        uriString = uriString.replaceAll(rawAuth + '/', "");
-        Uri newUri = Uri.parse(uriString);
-        Log.i("TAG", "realUri:" + newUri);
+//        Log.i("TAG", "这是什么鬼，raw:" + raw);
+//        String rawAuth = raw.getAuthority();
+//        Log.i("TAG", "这是什么鬼，rawAuth:" + rawAuth);
+//
+//        if (!AUTHORITY.equals(rawAuth)) {
+//            Log.i("TAG", "这是什么鬼，rawAuth:" + rawAuth);
+//
+//        }
+//
+//        String uriString = raw.toString();
+//        uriString = uriString.replaceAll(rawAuth + '/', "");
+//        Uri newUri = Uri.parse(uriString);
+//        Log.i("TAG", "realUri:" + newUri);
+
+        Log.i("TAG", "有没有进入这里 --- ");
+
+        Uri newUri = Uri.parse("content://com.example.mac.plugintest.TestProvider");
+
+
+
         return newUri;
     }
 
